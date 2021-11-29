@@ -61,6 +61,16 @@ function App() {
       iterations: Infinity
     });
 
+    const city = cityRef.current;
+    // city animation
+    var cityKeyFrame = [
+      {transform: 'translateX(0%)'},
+      {transform: 'translateX(-20%)'},
+    ];
+    var cityAnimation = city.animate(cityKeyFrame, {
+      duration:20000,
+      iterations:Infinity,
+    });
 
   })
 
@@ -69,6 +79,7 @@ function App() {
   const carRef = useRef();
   const backWheelRef = useRef();
   const frontWheelRef = useRef();
+  const cityRef = useRef();
   return (
     <div className="app">
       <div className="animation">
@@ -87,7 +98,7 @@ function App() {
           <img src={cloudImg} alt="cloud" className="cloud" />
           <img src={cloudImg} alt="cloud" className="cloud" />
       </div>
-      <div className="city"></div>
+      <div ref= {cityRef} className="city"></div>
       <div className="highway"></div>
       <div className="car-div">
           <img ref ={carRef} src={carImg} alt="" className="car" />
