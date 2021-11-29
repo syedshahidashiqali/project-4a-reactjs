@@ -43,12 +43,32 @@ function App() {
       duration:2000,
       iterations:Infinity,
       direction: "alternate"
-    })
+    });
+
+    const backWheel = backWheelRef.current;
+    const frontWheel = frontWheelRef.current;
+    // wheels animation
+    var wheelsKeyFrames = [
+      {transform: 'rotate(0deg)'},
+      {transform: 'rotate(3600deg)'},
+    ];
+    var backWheelAnimation = backWheel.animate(wheelsKeyFrames, {
+      duration: 20000,
+      iterations: Infinity
+    });
+      var frontWheelAnimation = frontWheel.animate(wheelsKeyFrames, {
+      duration: 20000,
+      iterations: Infinity
+    });
+
+
   })
 
   const birdRef = useRef();
   const cloudRef = useRef();
   const carRef = useRef();
+  const backWheelRef = useRef();
+  const frontWheelRef = useRef();
   return (
     <div className="app">
       <div className="animation">
@@ -73,8 +93,8 @@ function App() {
           <img ref ={carRef} src={carImg} alt="" className="car" />
       </div>
       <div className="wheels">
-          <img src={wheelImg} alt="" className="wheel back-wheel" />
-          <img src={wheelImg} alt="" className="wheel front-wheel" />
+          <img ref={backWheelRef} src={wheelImg} alt="" className="wheel back-wheel" />
+          <img ref={frontWheelRef} src={wheelImg} alt="" className="wheel front-wheel" />
       </div>
     </div>
   );
