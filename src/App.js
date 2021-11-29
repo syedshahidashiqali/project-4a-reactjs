@@ -31,11 +31,24 @@ function App() {
     var cloudAnimation = cloud.animate(cloudKeyframes, {
       duration: 20000,
       iterations :Infinity
+    });
+
+    const car = carRef.current;
+    // car animation
+    var carKeyFrame = [
+      {transform: "translateY(0px)"},
+      {transform: "translateY(2px)"},
+    ];
+    var carAnimation = car.animate(carKeyFrame, {
+      duration:2000,
+      iterations:Infinity,
+      direction: "alternate"
     })
   })
 
   const birdRef = useRef();
   const cloudRef = useRef();
+  const carRef = useRef();
   return (
     <div className="app">
       <div className="animation">
@@ -57,7 +70,7 @@ function App() {
       <div className="city"></div>
       <div className="highway"></div>
       <div className="car-div">
-          <img src={carImg} alt="" className="car" />
+          <img ref ={carRef} src={carImg} alt="" className="car" />
       </div>
       <div className="wheels">
           <img src={wheelImg} alt="" className="wheel back-wheel" />
