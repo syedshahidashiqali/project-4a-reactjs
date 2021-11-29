@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url(images/sky.jpg);
+}
+.animation {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.animation > button, .animation > span {
+  width: 200px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.animation > button {
+  background-color: aqua;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.bird {
+  width: 80px;
+  position: absolute;
+  margin-top: 0;
+}
+
+.cloud {
+  margin-left: 100px;
+}
+
+.highway {
+  background-image: url(images/road.jpg);
+  height: 200px;
+  bottom: 0;
+}
+
+.city {
+  background-image: url(images/city.png);
+  height: 250px;
+  bottom: 200px;
+}
+
+.city, .highway {
+  width: 500%;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-repeat: repeat-x;
+}
+
+.car-div {
+  width: 400px;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 2;
+}
+
+.car {
+  width: 100%;
+}
+
+.wheels {
+  position: absolute;
+  bottom: 178px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.wheels img {
+  width: 72px;
+  height: 72px;
+}
+
+.back-wheel {
+  position: absolute;
+  left: -165px;
+}
+
+.front-wheel {
+  position: absolute;
+  left: 80px;
+}
