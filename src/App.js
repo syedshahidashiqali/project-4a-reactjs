@@ -72,6 +72,18 @@ function App() {
       iterations:Infinity,
     });
 
+    const highway = highwayRef.current;
+    // highway animation
+    var highwayKeyFrame = [
+      {transform: 'translateX(0%)'},
+      {transform: 'translateX(-10%)'},
+      {transform: 'translateX(-20%)'},
+    ];
+    var highwayAnimation = highway.animate(highwayKeyFrame, {
+        duration:20000,
+        iterations:Infinity,
+    })
+
   })
 
   const birdRef = useRef();
@@ -80,6 +92,7 @@ function App() {
   const backWheelRef = useRef();
   const frontWheelRef = useRef();
   const cityRef = useRef();
+  const highwayRef = useRef();
   return (
     <div className="app">
       <div className="animation">
@@ -99,7 +112,7 @@ function App() {
           <img src={cloudImg} alt="cloud" className="cloud" />
       </div>
       <div ref= {cityRef} className="city"></div>
-      <div className="highway"></div>
+      <div ref={highwayRef} className="highway"></div>
       <div className="car-div">
           <img ref ={carRef} src={carImg} alt="" className="car" />
       </div>
