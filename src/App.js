@@ -21,9 +21,21 @@ function App() {
       duration: 14000,
       iterations :Infinity
     });
+
+    const cloud = cloudRef.current;
+    // cloud animation
+    var cloudKeyframes = [
+      { transform: 'translateX(100%)' },
+      { transform: 'translateX(-100%)' },
+    ];
+    var cloudAnimation = cloud.animate(cloudKeyframes, {
+      duration: 20000,
+      iterations :Infinity
+    })
   })
 
   const birdRef = useRef();
+  const cloudRef = useRef();
   return (
     <div className="app">
       <div className="animation">
@@ -37,7 +49,7 @@ function App() {
       <div ref={birdRef} className="bird-div">
           <img className="bird" src={birdImg} alt="bird" />
       </div>
-      <div className="cloud-div">
+      <div ref={cloudRef} className="cloud-div">
           <img src={cloudImg} alt="cloud" className="cloud" />
           <img src={cloudImg} alt="cloud" className="cloud" />
           <img src={cloudImg} alt="cloud" className="cloud" />
