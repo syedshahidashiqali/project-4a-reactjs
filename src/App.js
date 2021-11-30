@@ -96,6 +96,7 @@ function App() {
     }
   });
 
+  // Pause Button Handler
   const pauseBtnHandler = () => {
     getBirdAnimation().pause();
     getCloudAnimation().pause();
@@ -105,13 +106,25 @@ function App() {
     getCityAnimation().pause();
     getHighwayAnimation().pause();
     setAnimationState("paused")
-  }
+  };
+
+  // Play Button Handler
+  const playBtnHandler = () => {
+    getBirdAnimation().play();
+    getCloudAnimation().play();
+    getCarAnimation().play();
+    getBackWheelAnimation().play();
+    getFrontWheelAnimation().play();
+    getCityAnimation().play();
+    getHighwayAnimation().play();
+    setAnimationState("running")
+  };
   return (
     <div className="app">
       <div className="animation">
           <span className="state">Animation State: {animationState}</span>
           <button onClick={pauseBtnHandler} className="pause">Pause</button>
-          <button className="play">Play</button>
+          <button onClick={playBtnHandler} className="play">Play</button>
           <button className="reverse">Reverse</button>
           <button className="speedup">Speed Up</button>
           <button className="speeddown">Speed Down</button>
