@@ -89,7 +89,7 @@ function App() {
 
   // const birdRef = useRef();
   // const cloudRef = useRef();
-  const carRef = useRef();
+  // const carRef = useRef();
   const backWheelRef = useRef();
   const frontWheelRef = useRef();
   const cityRef = useRef();
@@ -106,7 +106,7 @@ function App() {
       iterations :Infinity
     }
   });
-  
+
   // cloud animation
   const {ref: cloudRef, playState: cloudPlayState, getAnimation: getCloudAnimation } = useWebAnimations({
     keyframes: [
@@ -116,6 +116,19 @@ function App() {
     animationOptions: {
       duration: 20000,
       iterations :Infinity
+    }
+  });
+
+  // car animation
+  const {ref: carRef, playState: carPlayState, getAnimation: getCarAnimation } = useWebAnimations({
+    keyframes: [
+      {transform: "translateY(0px)"},
+      {transform: "translateY(2px)"},
+    ],
+    animationOptions: {
+      duration: 2000,
+      iterations :Infinity,
+      direction: "alternate"
     }
   });
   return (
