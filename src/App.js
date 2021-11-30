@@ -156,7 +156,7 @@ function App() {
   return (
     <div className="app">
       <div className="animation">
-          <span className="state">Animation State: <b style={{color: "red"}}>{animationState}</b></span>
+          <span className="state">Animation State: <b>{animationState}</b></span>
           <button onClick={pauseBtnHandler} className="pause">Pause</button>
           <button onClick={playBtnHandler} className="play">Play</button>
           <button onClick={reverseBtnHandler} className="reverse">Reverse</button>
