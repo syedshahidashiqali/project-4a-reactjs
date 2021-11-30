@@ -141,6 +141,18 @@ function App() {
     getCityAnimation().updatePlaybackRate(getCityAnimation().playbackRate * 2);
     getHighwayAnimation().updatePlaybackRate(getHighwayAnimation().playbackRate * 2);
   };
+
+  // Speed Down Button Handler
+  const speedDownBtnHandler = () => {
+    getBirdAnimation().updatePlaybackRate(getBirdAnimation().playbackRate * .5);
+    getCloudAnimation().updatePlaybackRate(getCloudAnimation().playbackRate * .5);
+    getCarAnimation().updatePlaybackRate(getCarAnimation().playbackRate * .5);
+    getBackWheelAnimation().updatePlaybackRate(getBackWheelAnimation().playbackRate * .5);
+    getFrontWheelAnimation().updatePlaybackRate(getFrontWheelAnimation().playbackRate * .5);
+    getCityAnimation().updatePlaybackRate(getCityAnimation().playbackRate * .5);
+    getHighwayAnimation().updatePlaybackRate(getHighwayAnimation().playbackRate * .5);
+  };
+
   return (
     <div className="app">
       <div className="animation">
@@ -149,7 +161,7 @@ function App() {
           <button onClick={playBtnHandler} className="play">Play</button>
           <button onClick={reverseBtnHandler} className="reverse">Reverse</button>
           <button onClick={speedUpBtnHandler} className="speedup">Speed Up</button>
-          <button className="speeddown">Speed Down</button>
+          <button onClick={speedDownBtnHandler} className="speeddown">Speed Down</button>
       </div>
       <div className="bird-div">
           <img ref={birdRef} className="bird" src={birdImg} alt="bird" />
