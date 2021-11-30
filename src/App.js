@@ -90,7 +90,7 @@ function App() {
   // const birdRef = useRef();
   // const cloudRef = useRef();
   // const carRef = useRef();
-  const backWheelRef = useRef();
+  // const backWheelRef = useRef();
   const frontWheelRef = useRef();
   const cityRef = useRef();
   const highwayRef = useRef();
@@ -127,6 +127,19 @@ function App() {
     ],
     animationOptions: {
       duration: 2000,
+      iterations :Infinity,
+      direction: "alternate"
+    }
+  });
+
+  // back wheel animation
+  const {ref: backWheelRef, playState: backWheelPlayState, getAnimation: getBackWheelAnimation } = useWebAnimations({
+    keyframes: [
+      {transform: 'rotate(0deg)'},
+      {transform: 'rotate(3600deg)'},
+    ],
+    animationOptions: {
+      duration: 20000,
       iterations :Infinity,
       direction: "alternate"
     }
