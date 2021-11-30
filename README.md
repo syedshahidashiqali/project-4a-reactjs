@@ -2,6 +2,9 @@
 ## You can view this project by the link mentioned below:
 ### [http://project-4a-waapi-by-shahid.surge.sh/](http://project-4a-waapi-by-shahid.surge.sh/)
 
+# Demo
+![Preview](src/images/demo.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
