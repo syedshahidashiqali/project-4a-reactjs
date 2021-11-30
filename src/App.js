@@ -92,7 +92,7 @@ function App() {
   // const carRef = useRef();
   // const backWheelRef = useRef();
   // const frontWheelRef = useRef();
-  const cityRef = useRef();
+  // const cityRef = useRef();
   const highwayRef = useRef();
 
   // bird animation
@@ -141,7 +141,6 @@ function App() {
     animationOptions: {
       duration: 20000,
       iterations :Infinity,
-      direction: "alternate"
     }
   });
 
@@ -154,7 +153,18 @@ function App() {
     animationOptions: {
       duration: 20000,
       iterations :Infinity,
-      direction: "alternate"
+    }
+  });
+
+  // city animation
+  const {ref: cityRef, playState: cityPlayState, getAnimation: getCityAnimation } = useWebAnimations({
+    keyframes: [
+      {transform: 'translateX(0%)'},
+      {transform: 'translateX(-20%)'},
+    ],
+    animationOptions: {
+      duration: 20000,
+      iterations :Infinity,
     }
   });
   return (
