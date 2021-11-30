@@ -119,13 +119,24 @@ function App() {
     getHighwayAnimation().play();
     setAnimationState("running")
   };
+
+  // Reverse Button Handler
+  const reverseBtnHandler = () => {
+    getBirdAnimation().reverse();
+    getCloudAnimation().reverse();
+    getCarAnimation().reverse();
+    getBackWheelAnimation().reverse();
+    getFrontWheelAnimation().reverse();
+    getCityAnimation().reverse();
+    getHighwayAnimation().reverse();
+  };
   return (
     <div className="app">
       <div className="animation">
           <span className="state">Animation State: {animationState}</span>
           <button onClick={pauseBtnHandler} className="pause">Pause</button>
           <button onClick={playBtnHandler} className="play">Play</button>
-          <button className="reverse">Reverse</button>
+          <button onClick={reverseBtnHandler} className="reverse">Reverse</button>
           <button className="speedup">Speed Up</button>
           <button className="speeddown">Speed Down</button>
       </div>
