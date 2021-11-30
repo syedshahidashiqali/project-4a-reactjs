@@ -93,7 +93,7 @@ function App() {
   // const backWheelRef = useRef();
   // const frontWheelRef = useRef();
   // const cityRef = useRef();
-  const highwayRef = useRef();
+  // const highwayRef = useRef();
 
   // bird animation
   const {ref: birdRef, playState: birdPlayState, getAnimation: getBirdAnimation } = useWebAnimations({
@@ -160,6 +160,19 @@ function App() {
   const {ref: cityRef, playState: cityPlayState, getAnimation: getCityAnimation } = useWebAnimations({
     keyframes: [
       {transform: 'translateX(0%)'},
+      {transform: 'translateX(-20%)'},
+    ],
+    animationOptions: {
+      duration: 20000,
+      iterations :Infinity,
+    }
+  });
+
+  // highway animation
+  const {ref: highwayRef, playState: highwayPlayState, getAnimation: getHighwayAnimation } = useWebAnimations({
+    keyframes: [
+      {transform: 'translateX(0%)'},
+      {transform: 'translateX(-10%)'},
       {transform: 'translateX(-20%)'},
     ],
     animationOptions: {
